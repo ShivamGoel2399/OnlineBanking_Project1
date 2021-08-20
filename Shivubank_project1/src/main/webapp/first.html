@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>welcome to ShivuBank</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to ShivuBank</h1>
+        <p class="lead">The Most Trusted Bank</p>
+        <hr class="my-4">
+        <p>Menu</p>
+        <h2>Customer</h2>
+        <h3>Sign Up as Customer</h3>
+        <button id="b1" class="btn btn-primary" type="button">Sign Up as Customer</button><br /><br>
+        <h3>Sign In as Customer</h3>
+        <button id="b2" class="btn btn-primary" type="button">Sign In as Customer</button><br /><br>
+        <h2>Employee</h2>
+        <h3>Sign In as Employee</h3>
+        <button id="b3" class="btn btn-primary" type="button">Sign In as Employee</button><br /><br>
+    </div>
+
+<script type="text/javascript">
+document.getElementById("b1").onclick = function () {
+    location.href = "/Shivubank_project1/register.html";
+};
+document.getElementById("b2").onclick = function () {
+    location.href = "/Shivubank_project1/loginC.html";
+};
+document.getElementById("b3").onclick = function () {
+    location.href = "/Shivubank_project1/loginE.html";
+};
+
+
+    
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
