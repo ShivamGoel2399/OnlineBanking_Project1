@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<title>Trasaction</title>
+</head>
+<body>
+  <div class="container">
+<div class="jumbotron">
+  <h1 class="display-4">Transactions</h1>
+  <p class="lead">Welcome Customer</p>
+  <hr class="my-4">
+  <p>Enter your Accountno..</p>
+
+      <form method="get" action="transactiondetails">
+        
+        <input type="number" id="accountno" name="accountno" placeholder="Enter your Accountno..">
+        <br><br>
+        <label for="b1">For All Transaction Details </label>
+          <button type="button" id="b1">Get Details</button>
+          
+          <br><br><br>
+            <p>&nbsp; &#8618; Logout From The Session <a href="http://localhost:8080/Shivubank_project1/logout1" style="color:dodgerblue">click here</a>.</p>
+        
+      </form>
+  </div>  
+</div>
+
+    <div class="container" id="results">
+        
+    </div>
+<script>
+  b1.onclick =()=>{
+    let url = "http://localhost:8080/Shivubank_project1/transactiondetails?accountno="+ document.getElementById("accountno").value;
+            fetch(url)
+                .then(response => response.json())
+                .then(res => {
+                    let data = "<table class='table table-striped table-bordered'> <thead class='thead-dark'> <tr><th>TransactionId</th><th>TransactionType</th><th>CustomerAccountNo</th></thead><tbody>" 
+                    res.forEach(e => {
+                        data = data + "<tr><td>" + e.transactionid + "</td>";
+                        data = data + "<td>" + e.transactiontype + "</td>";
+                        data = data + "<td>" + e.customeraccountno + "</td>";
+                    });
+                    data = data + "</tr></tbody></table>";
+                    document.getElementById("results").innerHTML = data;
+                })
+            }
+  
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
